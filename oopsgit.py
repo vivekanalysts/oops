@@ -69,6 +69,72 @@ for s in ls:
 
 
 
+class student:
+    def getstudent(self):
+        self.__rollno=input("Enter roll number:")
+        self.__name=input("Enter name:")
+
+    def getmarks(self):
+        self.__p=int(input("Enter physica marks:")) 
+        self.__c=int(input("Enter chemistry marks:"))
+        self.__m=int(input("Enter math marks:"))
+
+    def showResult(self):
+        print("Roll number:",self.__rollno)
+        print("Name:",self.__name)
+        print("Physics:",self.__p)
+        print("Chemistry:",self.__c)
+        print("Math:",self.__m)
+        self.getGrade()
+        
+        
+
+    def getGrade(self):
+        t=self.__p+self.__m+self.__c
+        p=t/3
+
+        if (p>= 80):
+             grade ="A"
+        elif(p >=60 and p<=79):
+             grade ="B"
+        else:
+             grade ="C"
+
+        print(f"Total: {t:.1f}")
+        print(f"Percentage: {p:.1f}")
+        print(f"Grade:{grade}")
+
+    def search (self,rollno):
+
+        if (self.__rollno==rollno):
+              self.showResult()
+              return True
+        return False
+        
+    
+ 
+n=int(input("Enter N:"))
+LS=[]
+for i in range(n):
+
+ s=student()
+ s.getstudent()
+ s.getmarks()
+ LS.append(s)
+
+rollno=input("Enter Roll Number u want to search1:")
+for s in LS:
+    found=s.search(rollno)
+    if (found):break
+
+if(not found):
+    print(rollno,"Roll Number not exist" )
+
+    
+#=====================================
+
+
+
 class person:
     def __init__(self,name,age):
         self.__name=name
@@ -84,6 +150,7 @@ p1.showperson()
 del p1
 p2.showperson()
 input("End of program")   
+
 
 #=======================
 
@@ -214,55 +281,11 @@ t.sub()
 
 #========================================
 
-class student:
-    def getstudent(self):
-        self.__rollno=(input("Enter roll number:"))
-        self.__name=(input("Enter name:"))
-    def getmarks(self):
-        self.__p=(input("enter physica marks:")) 
-        self.__c=(input("enter chemistry marks:"))
-        self.__m=(input("enter math marks:"))
-    def showresult(self):
-        print("roll number:",self.__rollno)
-        print("name:",self.__name)
-        print("physics:",self.__p)
-        print("chemistry:",self.__c)
-        print("math:",self.__m)
-        self. getgrade()
+
+
         
 
-    def getgrade(self):
-        t=self.___p+self.__c+self.__m
-        p=t/3
-        if(p>=80):
-           grade="A"
-        elif(p>=60 and 79<=p): 
-           grade="B"
-        else:
-           grade="c" 
 
-        print(f"total:{t:.f}")
-        print(f"percentage:{p:.f}")
-        print(f"grade:{grade:.f}")    
-
-    def search(self):
-       if (self.__rollno==rollno):   
-          self.showresult()
-          return True
-       return False
- 
-n = int(input("Enter n:"))
-ls=[]
-for i in range(n):
-
- s=student()
- s.getstudent()
- s.getmarks()
- ls.append(s)
-
-rollno=input( "enter roll number:")
-for s in ls:
-      found=s.search(rollno)
 
 
 
